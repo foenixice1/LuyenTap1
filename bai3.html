@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<div>
+    <input type="text" id="nhapa" placeholder="Nhập số a">
+    <button type="button" onclick="kiemtra()">Kiểm tra</button>
+    <p id="ketqua"></p>
+    <script>
+        function kiemtra() {
+            let a = +document.getElementById("nhapa").value;
+            if ( a > 0) {
+                document.getElementById("ketqua").innerHTML= ' Số a lớn hơn 0';
+            }else if ( a < 0) {
+                document.getElementById("ketqua").innerHTML= ' Số a nhỏ hơn 0';
+            }else if ( a == 0 ) {
+                document.getElementById("ketqua").innerHTML= ' Số a bằng 0';
+            }else {
+                document.getElementById("ketqua").innerHTML= ' Vui lòng nhập số nguyên';
+            }
+        }
+    </script>
+</div>
+<hr>
+<div>
+
+    <input type="text" id="soa" placeholder="Nhập số a">
+
+    <input type="text" id="sob" placeholder="Nhập số b">
+
+    <input type="text" id="soc" placeholder="Nhập số c">
+   <button type="button" id="kiemtra" onclick="kiemtraa()">Kiểm tra</button>
+    <p id="kqua"></p>
+    <script>
+        function kiemtraa() {
+            let a = +document.getElementById("soa").value;
+            let b = +document.getElementById("sob").value;
+            let c = +document.getElementById("soc").value;
+            if ( a > b) {
+                document.getElementById("kqua").innerHTML= ' Số lớn nhất là : ' + a;
+            }else if ( b > c) {
+                document.getElementById("kqua").innerHTML= ' Số lớn nhất là : ' + b;
+            }else if ( c > a) {
+                document.getElementById("kqua").innerHTML= ' Số lớn nhất là : ' + c;
+            }else if ( a == b && b == c ) {
+                document.getElementById("kqua").innerHTML= ' Ba số bằng nhau';
+            }
+        }
+    </script>
+
+</div>
+<hr>
+<div>
+    <input type="text" id="dktra" placeholder="Nhập điểm kiểm tra">
+    <input type="text" id="dtgiua" placeholder="Nhập điểm thi giữa kỳ">
+    <input type="text" id="dtcuoi" placeholder=" Nhập điểm thi cuối kỳ">
+    <button type="button" id="check" onclick="check()">Kiểm tra</button>
+    <p id="kq"></p>
+    <script>
+        function check() {
+            let dktra = +document.getElementById("dktra").value;
+            let dtgiua = +document.getElementById("dtgiua").value;
+            let dtcuoi = +document.getElementById("dtcuoi").value;
+            let G = dtgiua * 2 ;
+            let C = dtcuoi * 3 ;
+            let K = dktra ;
+            if ( (G + C + K)/ 6 <= 5 && (G + C + K) > 0  ) {
+                document.getElementById("kq").innerHTML= ' Bạn đạt học sinh TRUNG BÌNH';
+            }else if ( (G + C + K)/ 6 >= 5 && (G + C + K)/ 6 < 8  ) {
+                document.getElementById("kq").innerHTML= ' Bạn đạt học sinh TIÊN TIẾN';
+            }else if ( (G + C + K)/ 6 >= 8 && (G + C + K)/ 6 <=10 ) {
+                document.getElementById("kq").innerHTML= ' Bạn đạt học sinh GIỎI. Chúc mừng bạn';
+            }else {
+                document.getElementById("kq").innerHTML= ' Hãy nhập đúng điểm vào từng mục';
+            }
+
+        }
+
+    </script>
+</div>
+<hr>
+<div>
+    <input type="text" id="doanhthu" placeholder="Nhập vào doanh số bán hàng" style="width: 200px">
+    <input type="text" id="phantram" placeholder="Nhập số % hoa hồng nhận được" style="width: 200px">
+    <button type="button" id="doanhso" onclick="nhapvao()">Tính Tiền</button>
+    <p id="hoahong"></p>
+    <script>
+        function nhapvao() {
+            let doanhso = +document.getElementById("doanhthu").value;
+            let phantram = +document.getElementById("phantram").value;
+            let hoahong = ( phantram / 100 ) * doanhso;
+            document.getElementById("hoahong").innerHTML= phantram +  ' % hoa hồng bạn nhận được là : ' + hoahong;
+        }
+    </script>
+</div>
+
+
+</body>
+</html>
