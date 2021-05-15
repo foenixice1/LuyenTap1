@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyện tập 2</title>
+</head>
+<body>
+<div>
+    <input type="text" id="nhietdoo" placeholder=" Nhập vào nhiệt độ hiện tại" style="width: 200px">
+    <button type="button" onclick="nhietdo()">Kiểm tra</button>
+    <p id="kq"></p>
+    <script>
+        function nhietdo() {
+            let C = +document.getElementById("nhietdoo").value;
+            let F = ( C * 1.8) + 32;
+            if (C) {
+                document.getElementById("kq").innerHTML= ' Nhiệt độ F là : ' + F ;
+            }else {
+                document.getElementById("kq").innerHTML= ' Vui lòng nhập đúng nhiệt độ';
+            }
+
+        }
+    </script>
+</div>
+<hr>
+<div>
+    <input type="text" id="met" placeholder=" Nhập mét" style="width: 200px">
+    <button type="button" onclick="doimet()">Kiểm tra</button>
+    <p id="kqua"></p>
+    <script>
+        function doimet() {
+            let M = +document.getElementById("met").value;
+            let feet = ( M * 3.2808 );
+            if ( M ) {
+                document.getElementById("kqua").innerHTML= ' Vậy độ dài feet là : ' + feet ;
+            }else {
+                document.getElementById("kqua").innerHTML= ' Vui lòng nhập đúng độ dài'
+            }
+
+        }
+    </script>
+</div>
+<hr>
+<div>
+    <input type="text" id="dodai" placeholder="Nhập cạnh a" style="width: 200px">
+    <button type="button" onclick="dodaii()">Kiểm tra</button>
+    <p id="ketqua"></p>
+    <script>
+        function dodaii() {
+            let A = +document.getElementById("dodai").value;
+            let S = A * A ;
+            if ( A ) {
+                document.getElementById("ketqua").innerHTML= ' Diện tích hình vuông là : ' + S ;
+            }else {
+                document.getElementById("ketqua").innerHTML= ' Vui lòng nhập đúng độ dài';
+            }
+        }
+    </script>
+
+</div>
+<hr>
+<div>
+    <input type="text" id="tuoi" placeholder="Nhập số tuổi" style="width: 200px">
+    <button type="button" onclick="dotuoi()">Kiểm tra</button>
+    <p id="ketq"></p>
+    <script>
+        function dotuoi() {
+            let dotuoi = +document.getElementById("tuoi").value;
+            if ( dotuoi > 0 && dotuoi < 120 ) {
+                document.getElementById("ketq").innerHTML= 'Độ tuổi của người đó là : ' + dotuoi ;
+            }else {
+                document.getElementById("ketq").innerHTML= ' Đó không phải độ tuổi của một người';
+            }
+        }
+    </script>
+</div>
+<hr>
+<div>
+    <input type="text" id="canha" placeholder="Nhập cạnh a" style="width: 200px">
+    <input type="text" id="canhb" placeholder="Nhập cạnh b" style="width: 200px">
+    <input type="text" id="canhc" placeholder="Nhập cạnh c" style="width: 200px">
+    <button type="button" onclick="canh()">Kiểm tra</button>
+    <p id="canhla"></p>
+    <script>
+        function  canh() {
+            let canha = +document.getElementById("canha").value;
+            let canhb = +document.getElementById("canhb").value;
+            let canhc = +document.getElementById("canhc").value;
+            if ( canha > 0 ) {
+                if ( canhb > 0) {
+                    if ( canhc > 0) {
+                        if ( ( canha + canhb ) > canhc ) {
+                            if( ( canha + canhc ) > canhb ){
+                                if ( (canhb + canhc) > canha)
+                                    document.getElementById("canhla").innerHTML= ' a,b,c là cạnh của một tam giác';
+                            }
+                        }
+                    }
+                }
+            }else {
+                document.getElementById("canhla").innerHTML= ' a,b,c không phải là một cạnh của tam giác';
+            }
+
+        }
+    </script>
+</div>
+<hr>
+<div>
+    <input type="text" id="tiendien" placeholder="Nhập số điện năng tiêu dùng" style="width: 200px">
+    <button type="button" onclick="tien()">Kiểm tra</button>
+    <p id="tienn"></p>
+    <script>
+        function tien() {
+            let TD = +document.getElementById("tiendien").value;
+            let sotenla = TD * 3000;
+            if ( tiendien ) {
+                document.getElementById("tienn").innerHTML= ' Tiền điện tháng này của bạn là : ' + sotenla + ' VND';
+            }
+        }
+    </script>
+</div>
+<hr>
+<div>
+    <input type="text" id="soluong" placeholder="Nhập vào lương của bạn" style="width: 200px">
+    <button type="button" onclick="thue()">Kiểm tra</button>
+    <p id="thuela"></p>
+    <script>
+        function thue() {
+            let soluong = +document.getElementById("soluong").value;
+            if (soluong <= 4000000) {
+                document.getElementById("thuela").innerHTML = ' Bạn không phải đóng thuế';
+            } else if (soluong <= 6000000) {
+                let thue1 = (soluong - 4000000) * 5 / 100;
+                document.getElementById("thuela").innerHTML = ' Bạn phải đóng 5% thuế là : ' + thue1;
+            } else if (soluong <= 9000000) {
+                let thue2 = (6000000 - 4000000) * 5 / 100 + (soluong - 6000000) * 10 / 100;
+                document.getElementById("thuela").innerHTML = ' Bạn phải đóng 10% thuế là : ' + thue2;
+            } else if (soluong <= 14000000) {
+                let thue3 = (6000000 - 4000000) * 5 / 100 + (9000000 - 6000000) * 10 / 100 + (soluong - 9000000) * 15 / 100;
+                document.getElementById("thuela").innerHTML = ' Bạn phải đóng 15% thuế là : ' + thue3;
+            } else if (soluong <= 24000000) {
+                let thue4 = (6000000 - 4000000) * 5 / 100 + (9000000 - 6000000) * 10 / 100 + (14000000 - 9000000) * 15 / 100 + (soluong - 14000000) * 20 / 100;
+                document.getElementById("thuela").innerHTML = ' Bạn phải đóng 20% thuế là : ' + thue4;
+            }else if (soluong <= 44000000) {
+                let thue5 = (6000000-4000000)*5/100+(9000000-6000000)*10/100+(14000000-9000000)*15/100+(24000000-14000000)*20/100+(soluong-24000000)*25/100;
+                document.getElementById("thuela").innerHTML = ' Bạn phải đóng 25% thuế là : ' + thue5;
+            }else if (soluong <= 84000000) {
+                let thue6 = (6000000-4000000)*5/100+(9000000-6000000)*10/100+(14000000-9000000)*15/100+(24000000-14000000)*20/100+(44000000-24000000)*25/100+(soluong-44000000)*30/100;
+                document.getElementById("thuela").innerHTML = ' Bạn phải đóng 30% thuế là : ' + thue6;
+            }else {
+                let thue7 = (6000000-4000000)*5/100+(9000000-6000000)*10/100+(14000000-9000000)*15/100+(24000000-14000000)*20/100+(44000000-24000000)*25/100+(84000000-44000000)*30/100+(soluong-84000000)*35/100;
+                document.getElementById("thuela").innerHTML = ' Bạn phải đóng 35% thuế là : ' + thue7;
+            }
+        }
+    </script>
+</div>
+<hr>
+<div>
+
+</div>
+
+
+
+
+</body>
+</html>
